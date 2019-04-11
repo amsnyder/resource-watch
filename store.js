@@ -61,12 +61,6 @@ import * as getInvolvedDetail from 'layout/get-involved-detail';
 import * as adminInteractions from 'components/admin/data/layers/form/interactions';
 import * as adminLayerPreview from 'components/admin/data/layers/form/layer-preview';
 
-// Widget editor
-import { reducers as widgetEditorModules } from 'widget-editor';
-
-// React responsive redux
-import { reducer as responsiveReducer } from 'react-responsive-redux';
-
 // Embed
 import * as embedMapSwipe from 'layout/embed/map-swipe';
 
@@ -74,12 +68,6 @@ import * as embedMapSwipe from 'layout/embed/map-swipe';
 const reducer = combineReducers({
   ...reducers,
   ...modules,
-
-  // widgetEditor
-  ...widgetEditorModules,
-
-  // React responsive
-  responsive: responsiveReducer,
 
   // Header
   header: handleModule(header),

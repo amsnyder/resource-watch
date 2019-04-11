@@ -45,8 +45,7 @@ class LayoutApp extends PureComponent {
     isFullScreen: PropTypes.bool.isRequired,
     showUserReport: PropTypes.bool.isRequired,
     toggleModal: PropTypes.func.isRequired,
-    setModalOptions: PropTypes.func.isRequired,
-    updateIsLoading: PropTypes.func.isRequired
+    setModalOptions: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -77,11 +76,9 @@ class LayoutApp extends PureComponent {
 
   componentDidMount() {
     Router.onRouteChangeStart = () => {
-      this.props.updateIsLoading(true);
       if (Progress && Progress.Component.instance) Progress.show();
     };
     Router.onRouteChangeComplete = () => {
-      this.props.updateIsLoading(false);
       if (Progress && Progress.Component.instance) Progress.hideAll();
     };
 

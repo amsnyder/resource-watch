@@ -17,8 +17,7 @@ class LayoutEmbed extends PureComponent {
     description: PropTypes.string.isRequired,
     thumbnailUrl: PropTypes.string,
     className: PropTypes.string,
-    toggleTooltip: PropTypes.func.isRequired,
-    updateIsLoading: PropTypes.func.isRequired
+    toggleTooltip: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -42,10 +41,6 @@ class LayoutEmbed extends PureComponent {
   componentDidMount() {
     Router.onRouteChangeStart = () => {
       this.props.toggleTooltip(false);
-      this.props.updateIsLoading(true);
-    };
-    Router.onRouteChangeComplete = () => {
-      this.props.updateIsLoading(false);
     };
   }
 

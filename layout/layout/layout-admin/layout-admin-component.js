@@ -38,7 +38,6 @@ class LayoutAdmin extends PureComponent {
     toggleModal: PropTypes.func.isRequired,
     toggleTooltip: PropTypes.func.isRequired,
     setModalOptions: PropTypes.func.isRequired,
-    updateIsLoading: PropTypes.func.isRequired,
     setLocale: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired
   };
@@ -79,10 +78,8 @@ class LayoutAdmin extends PureComponent {
     Router.onRouteChangeStart = () => {
       if (Progress && Progress.Component.instance) Progress.show();
       this.props.toggleTooltip(false);
-      this.props.updateIsLoading(true);
     };
     Router.onRouteChangeComplete = () => {
-      this.props.updateIsLoading(false);
       if (Progress && Progress.Component.instance) Progress.hideAll();
     };
 
